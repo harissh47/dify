@@ -24,7 +24,7 @@ const SearchInput: FC<SearchInputProps> = ({
 
   return (
     <div className={cn(
-      'group flex items-center px-2 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 border border-transparent overflow-hidden',
+      'group flex items-center px-2 h-8 rounded-lg bg-gray-200 hover:bg-gray-300 border border-transparent overflow-hidden dark:bg-[#2F3335]',
       focus && '!bg-white hover:bg-white shawdow-xs !border-gray-300',
       !focus && value && 'hover:!bg-gray-200 hover:!shawdow-xs hover:!border-black/5',
       white && '!bg-white hover:!bg-white shawdow-xs !border-gray-300 hover:!border-gray-300',
@@ -37,7 +37,7 @@ const SearchInput: FC<SearchInputProps> = ({
         type="text"
         name="query"
         className={cn(
-          'grow block h-[18px] bg-gray-200 rounded-md border-0 text-gray-700 text-[13px] placeholder:text-gray-500 appearance-none outline-none group-hover:bg-gray-300 caret-blue-600',
+          'grow block h-[18px] bg-gray-200 rounded-md border-0 text-gray-700 text-[13px] placeholder:text-gray-500 appearance-none outline-none group-hover:bg-gray-300 caret-blue-600 dark:bg-[#2F3335]',
           focus && '!bg-white hover:bg-white group-hover:bg-white placeholder:!text-gray-400',
           !focus && value && 'hover:!bg-gray-200 group-hover:!bg-gray-200',
           white && '!bg-white hover:!bg-white group-hover:!bg-white placeholder:!text-gray-400',

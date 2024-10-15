@@ -73,10 +73,30 @@ const Apps = () => {
 
   const anchorRef = useRef<HTMLDivElement>(null)
   const options = [
-    { value: 'all', text: t('app.types.all'), icon: <DotsGrid className='w-[14px] h-[14px] mr-1' /> },
-    { value: 'chat', text: t('app.types.chatbot'), icon: <ChatBot className='w-[14px] h-[14px] mr-1' /> },
-    { value: 'agent-chat', text: t('app.types.agent'), icon: <CuteRobot className='w-[14px] h-[14px] mr-1' /> },
-    { value: 'workflow', text: t('app.types.workflow'), icon: <Route className='w-[14px] h-[14px] mr-1' /> },
+    {
+      value: 'all',
+      text: t('app.types.all'),
+      icon: <DotsGrid className='w-[14px] h-[14px] mr-1 dark:text-[#BDB7AF]' />,
+      className: 'bg-white dark:bg-[#181A1B] text-gray-800 dark:text-[#BDB7AF] p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#2C2F33]',
+    },
+    {
+      value: 'chat',
+      text: t('app.types.chatbot'),
+      icon: <ChatBot className='w-[14px] h-[14px] mr-1 dark:text-[#BDB7AF]' />,
+      className: 'bg-white dark:bg-[#181A1B] text-gray-800 dark:text-[#BDB7AF] p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#2C2F33]',
+    },
+    {
+      value: 'agent-chat',
+      text: t('app.types.agent'),
+      icon: <CuteRobot className='w-[14px] h-[14px] mr-1 dark:text-[#BDB7AF]' />,
+      className: 'bg-white dark:bg-[#181A1B] text-gray-800 dark:text-[#BDB7AF] p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#2C2F33]',
+    },
+    {
+      value: 'workflow',
+      text: t('app.types.workflow'),
+      icon: <Route className='w-[14px] h-[14px] mr-1 dark:text-[#BDB7AF]' />,
+      className: 'bg-white dark:bg-[#181A1B] text-gray-800 dark:text-[#BDB7AF] p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-[#2C2F33]',
+    },
   ]
 
   useEffect(() => {
@@ -118,18 +138,19 @@ const Apps = () => {
 
   return (
     <>
-      <div className='sticky top-0 flex justify-between items-center pt-4 px-12 pb-2 leading-[56px] bg-gray-100 z-10 flex-wrap gap-y-2'>
+      <div className='sticky top-0 flex justify-between items-center pt-4 px-12 pb-2 leading-[56px] bg-gray-100 z-10 flex-wrap gap-y-2 dark:bg-[#1E2022]'>
         <TabSliderNew
           value={activeTab}
           onChange={setActiveTab}
           options={options}
         />
-        <div className='flex items-center gap-2'>
+        <div className='flex items-center gap-2 bg-white dark:bg-[#181A1B] text-gray-800 dark:text-[#BDB7AF]'>
+
           <TagFilter type='app' value={tagFilterValue} onChange={handleTagsChange} />
           <SearchInput className='w-[200px]' value={keywords} onChange={handleKeywordsChange} />
         </div>
       </div>
-      <nav className='grid content-start grid-cols-1 gap-4 px-12 pt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grow shrink-0'>
+      <nav className='grid content-start grid-cols-1 gap-4 px-12 pt-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grow shrink-0 bg-page-dark dark:bg-[#1E2022]'>
         {isCurrentWorkspaceEditor
           && <NewAppCard onSuccess={mutate} />}
         {data?.map(({ data: apps }: any) => apps.map((app: any) => (

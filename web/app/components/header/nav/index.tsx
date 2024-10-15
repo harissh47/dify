@@ -39,17 +39,17 @@ const Nav = ({
   return (
     <div className={`
       flex items-center h-8 mr-0 sm:mr-3 px-0.5 rounded-xl text-sm shrink-0 font-medium
-      ${isActived && 'bg-white shadow-md font-semibold'}
-      ${!curNav && !isActived && 'hover:bg-gray-200'}
+      ${isActived ? 'bg-white shadow-md font-semibold dark:bg-[#181A1B] dark:text-[#BDB7AF]' : 'text-gray-800'}
+      ${!curNav && !isActived ? 'hover:bg-gray-200 dark:hover:bg-gray-700' : ''}
     `}>
       <Link href={link}>
         <div
           onClick={() => setAppDetail()}
           className={classNames(`
-            flex items-center h-7 px-2.5 cursor-pointer rounded-[10px]
-            ${isActived ? 'text-primary-600' : 'text-gray-500'}
-            ${curNav && isActived && 'hover:bg-primary-50'}
-          `)}
+    flex items-center h-7 px-2.5 cursor-pointer rounded-[10px]
+    ${isActived ? 'text-primary-600 dark:text-[#BDB7AF]' : 'text-gray-500 dark:text-[#BDB7AF]'}
+    ${curNav && isActived ? 'hover:bg-primary-50 dark:hover:bg-gray-700' : ''}
+  `)}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
@@ -64,6 +64,7 @@ const Nav = ({
           </div>
           {text}
         </div>
+
       </Link>
       {
         curNav && isActived && (
