@@ -102,6 +102,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  darkMode: 'class', // Ensure dark mode is controlled via the 'class' strategy
-  plugins: [],
+  // darkMode: 'class', // Ensure dark mode is controlled via the 'class' strategy
+  // plugins: [], pull
 };
